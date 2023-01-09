@@ -1,28 +1,6 @@
 // Array of special characters to be included in password
 var specialCharacters = [
-  '@',
-  '%',
-  '+',
-  '\\',
-  '/',
-  "'",
-  '!',
-  '#',
-  '$',
-  '^',
-  '?',
-  ':',
-  ',',
-  ')',
-  '(',
-  '}',
-  '{',
-  ']',
-  '[',
-  '~',
-  '-',
-  '_',
-  '.'
+  '@','%','+','\\','/',"'",'!','#','$','^','?',':',',',')','(','}','{',']','[','~','-','_','.'
 ];
 
 // Array of numeric characters to be included in password
@@ -30,62 +8,12 @@ var numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
 // Array of lowercase characters to be included in password
 var lowerCasedCharacters = [
-  'a',
-  'b',
-  'c',
-  'd',
-  'e',
-  'f',
-  'g',
-  'h',
-  'i',
-  'j',
-  'k',
-  'l',
-  'm',
-  'n',
-  'o',
-  'p',
-  'q',
-  'r',
-  's',
-  't',
-  'u',
-  'v',
-  'w',
-  'x',
-  'y',
-  'z'
+  'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'
 ];
 
 // Array of uppercase characters to be included in password
 var upperCasedCharacters = [
-  'A',
-  'B',
-  'C',
-  'D',
-  'E',
-  'F',
-  'G',
-  'H',
-  'I',
-  'J',
-  'K',
-  'L',
-  'M',
-  'N',
-  'O',
-  'P',
-  'Q',
-  'R',
-  'S',
-  'T',
-  'U',
-  'V',
-  'W',
-  'X',
-  'Y',
-  'Z'
+  'A', 'B','C', 'D', 'E','F','G', 'H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'
 ];
 
 var allChars = specialCharacters + numericCharacters + lowerCasedCharacters + upperCasedCharacters;
@@ -103,10 +31,10 @@ var decision;
 
 // Function to prompt user for password options
 //This section asks for the users input, what type of characters they would like to use. 
-function getPasswordOptions() {
-   newPass = prompt("Let's get you a new password!");
-  if (!newpass) {
-    alert("You need to input something! Please try again!");
+function getPassword() {
+   var newPass = parseInt(prompt("Let's get you a new password! Choose between 10 & 64 characters :) "));
+  if (!newPass) {
+    alert("You need to input something!");
   } else if (newPass < minPasswordLength || newPass > maxPasswordLength ){
     newPass = parseInt(prompt("Please choose a password between 10 & 64 characters :)"));
   } else {
@@ -117,13 +45,12 @@ function getPasswordOptions() {
   };
 
 
+  // if, else if for user input:
+
   //if no options have been chosen:
-if (includeNum && includeChar && includeLower && includeUpper) {
-  decision = alert("Uh oh, please choose something!");
-}
 
 //if all options are chosen. 
-else if (includeNum && includeChar && includeUpper && includeLower) {
+if (includeNum && includeChar && includeUpper && includeLower) {
   decision = numericCharacters.concat(specialCharacters, upperCasedCharacters, lowerCasedCharacters);
 }
 
@@ -195,24 +122,23 @@ else if (includeUpper) {
 else if (includeLower) {
   decision = lowerCasedCharacters;
 }
+
+else if (!includeNum && !includeChar && !includeLower && !includeUpper)
+  decision = alert("Uh oh, please choose something!");
 }
+
+
+getPassword()
 
 
 var userPassword = [];
 // Function for getting a random element from an array
-function getRandom(arr) {
-  for (var i = 0; i < newPass; i++) {
+  for (var i = 0; i < userPassword; i++) {
     var includedPass = included[Math.floor(Math.random() * included.length)];
     userPassword.push(includedPass);
  }
 
  
-}
-
-// Function to generate password with user input
-function generatePassword() {
-
-}
 
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
@@ -226,6 +152,7 @@ function writePassword() {
 
   passwordText.value = password;
 }
+writePassword();
 
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
