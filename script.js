@@ -28,6 +28,17 @@ var upperCasedCharacters = [
   'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
 ];
 
+//Write password to the #password input
+function writePassword() {
+  var password = generatePassword(); // 
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+}
+
+//this prompts the user to input there choices once the generate button has been clicked. 
+document.querySelector("#generate").addEventListener("click", writePassword);
+
 
 //This section asks for the users input, what type of characters they would like to use. 
 function generatePassword() {
@@ -78,14 +89,5 @@ function generatePassword() {
   return userPassword;
 }
 
-//Write password to the #password input
-function writePassword() {
-  var password = generatePassword(); // 
-  var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
-}
-
-//this prompts the user to input there choices once the generate button has been clicked. 
-document.querySelector("#generate").addEventListener("click", writePassword);
 
