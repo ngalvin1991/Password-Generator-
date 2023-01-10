@@ -17,19 +17,19 @@ N/A
 Below are some examples of the functioning webpage, examples of the prompts and generated password:
 
 Main webpage without content:
-![alt-text](../Password-Generator-/assets/images/mainpagescreenshot.png)
+![alt-text](/assets/images/mainpagescreenshot.png)
 
 This shows the prompt for the user to input the amount of characters they would like to use for the password:
-![alt-text](../Password-Generator-/assets/images/includenumberexample.png)
+![alt-text](/assets/images/characterspromptexample.png)
 
 This shows an example of the next prompts, the example below is if the user would like to input numbers, once they click 'ok' (yes) or 'cancel' (no) it will move onto the next prompt.
-![alt-text](../Password-Generator-/assets/images/characterspromptexample.png)
+![alt-text](/assets/images/includenumberexample.png)
 
 The below example shows the final step which is the generated password. 
-![alt-text](../Password-Generator-/assets/images/generatedpasswordexample.png)
+![alt-text](/assets/images/generatedpasswordexample.png)
 
 Here is an example of the .js file used for this project this was part of the generatePassword section which calls the above prompts: 
-![alt-text](../Password-Generator-/assets/images/jsexampleforselections.png)
+![alt-text](/assets/images/jsexampleforselections.png)
 
 ## Credits
 
